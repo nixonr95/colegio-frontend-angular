@@ -1,0 +1,25 @@
+<form autocomplete="off" [formGroup]="miFormulario">
+    <h2>{{data.title}} asignatura</h2>
+    <br/>
+
+    <div>
+        <div>
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Asignatura</mat-label>
+                <mat-select formControlName="asignatura">
+                  <mat-option *ngFor="let asignatura of asignaturas" [value]="asignatura.id" >
+                    {{asignatura.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    </div>
+    <button mat-raised-button color="warn" (click)="dialog.close()">
+        cancelar
+    </button>
+    <button class="agregar-editar__asignatura" mat-raised-button color="primary" 
+            (click)="agregarEditar()" [disabled]="miFormulario.invalid">
+        {{data.title | lowercase}}
+    </button>
+</form>

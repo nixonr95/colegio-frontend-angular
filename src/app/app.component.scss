@@ -1,0 +1,30 @@
+.dashboard__sidenav {
+    // border: 1px solid #555;
+    border-radius: 0 50px 0 0 !important;
+    background-color: #2A2929;
+    a {
+        color: white;
+    }
+    div {
+        :hover{
+            background-color: darken($color: #2A2929, $amount: 5);
+        }
+    }
+   
+    .sidenav__logout{
+        // margin-top: calc(100vh - 180px);
+        position: absolute;
+        bottom: 0px;
+        
+        &:hover{
+            a{
+                color: red;
+            }
+        }
+    }
+}
+ 
+.dashboard__container{
+    margin: 10px;
+    width: 90vw;
+}

@@ -1,0 +1,8 @@
+<h2>¿Desea eliminar el curso: "{{data.curso.grado}}{{data.curso.salon}}"? </h2>
+<button mat-raised-button (click)="dialog.close()">
+    cancelar
+</button>
+<button class="eliminar__curso" mat-raised-button color="warn" 
+        (click)="eliminar()">
+    eliminar
+</button>

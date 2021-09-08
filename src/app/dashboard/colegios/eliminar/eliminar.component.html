@@ -1,0 +1,8 @@
+<h2>¿Desea eliminar el colegio: "{{data.datos.name}}"? </h2>
+<button mat-raised-button (click)="dialog.close()">
+    cancelar
+</button>
+<button class="eliminar__colegio" mat-raised-button color="warn" 
+        (click)="eliminar()">
+    eliminar
+</button>

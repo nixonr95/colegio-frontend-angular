@@ -1,0 +1,21 @@
+
+
+<form autocomplete="off" [formGroup]="miFormulario">
+    <h2>{{data.title}} colegio</h2>
+    <br/>
+
+    <div>
+        <mat-form-field appearance="legacy">
+            <mat-label>Nombre del colegio</mat-label>
+            <input matInput placeholder="Nombre del colegio" type="text"
+                   formControlName="name_colegio">
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="warn" (click)="dialog.close()">
+        cancelar
+    </button>
+    <button class="agregar__colegio" mat-raised-button color="primary" 
+            (click)="agregarEditar()" [disabled]="miFormulario.invalid">
+        {{data.title | lowercase}}
+    </button>
+</form>

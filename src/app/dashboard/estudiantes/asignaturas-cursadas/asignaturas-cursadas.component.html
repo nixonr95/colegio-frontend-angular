@@ -1,0 +1,24 @@
+<h2>Cursos {{data.datos.name}} </h2>
+<mat-list>
+    <button mat-raised-button color="primary" (click)="agregar('Agregar', data.datos.id)">Agregar</button>
+    <mat-list-item *ngFor="let asignaturaCursada of asignaturasDelEstudiante">
+      <mat-icon mat-list-icon>chevron_right</mat-icon>
+      <div mat-line>
+        <span>
+          {{asignaturaCursada.name_asignatura}}
+        </span>
+        <button class="cursos__acciones" 
+                mat-icon-button color="primary" matTooltip="Editar" type="button"
+                (click)="editar('Editar', asignaturaCursada)">
+              <mat-icon>edit</mat-icon>
+            </button>
+        <button mat-icon-button color="warn" matTooltip="Eliminar" type="button"
+                (click)="eliminar(asignaturaCursada)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    <!--   <div mat-line> {{folder.updated | date}} </div> -->
+    </mat-list-item>
+</mat-list>
+
+<h2 *ngIf="asignaturasDelEstudiante.length === 0">Éste estudiante no tiene asignaturas cursadas</h2>

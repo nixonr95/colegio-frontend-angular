@@ -1,0 +1,26 @@
+<div class="asignaturas__page">
+    <h2>Asignaturas {{data.datos.name}} </h2>
+    <mat-list>
+        <button mat-raised-button color="primary" (click)="agregar('Agregar', data.datos.id)">Agregar</button>
+        <mat-list-item *ngFor="let asignarura of asignaturasDelProfesor">
+          <mat-icon mat-list-icon>chevron_right</mat-icon>
+          <div mat-line>
+            <span>
+              {{asignarura.name}} {{asignarura.name_curso}}
+            </span>
+            <button class="asignaturas__acciones" 
+                    mat-icon-button color="primary" matTooltip="Editar" type="button"
+                    (click)="editar('Editar', asignarura)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+            <button mat-icon-button color="warn" matTooltip="Eliminar" type="button"
+                    (click)="eliminar(asignarura)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        <!--   <div mat-line> {{folder.updated | date}} </div> -->
+        </mat-list-item>
+    </mat-list>
+    
+    <h2 *ngIf="asignaturasDelProfesor.length === 0">Éste profesor no tiene asignaturas</h2>
+</div>

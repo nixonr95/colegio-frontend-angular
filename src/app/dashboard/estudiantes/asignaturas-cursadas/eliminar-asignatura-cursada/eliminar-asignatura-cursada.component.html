@@ -1,0 +1,8 @@
+<h2>¿Desea eliminar La asignatura: "{{data.asignaturaCursada.name_asignatura}}"? </h2>
+<button mat-raised-button (click)="dialog.close()">
+    cancelar
+</button>
+<button class="eliminar__asignatura" mat-raised-button color="warn" 
+        (click)="eliminar()">
+    eliminar
+</button>
